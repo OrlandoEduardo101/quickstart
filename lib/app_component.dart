@@ -1,9 +1,20 @@
 import 'package:angular/angular.dart';
+import 'package:angular_app/components/navbar/navbar.dart';
+import 'package:angular_app/route_paths.dart';
+import 'package:angular_app/routes.dart';
+import 'package:angular_app/utils/utils.dart';
+import 'package:angular_router/angular_router.dart';
 
 @Component(
   selector: 'my-app',
-  template: '<h1>Hello {{name}}</h1>',
+  templateUrl: 'app_component.html',
+  styleUrls: [
+    'app_component.css',
+  ],
+  directives: [coreDirectives, routerDirectives, Navbar],
+  exports: [RoutePaths, Routes],
+  providers: [ClassProvider(Utils),ClassProvider(Navbar)]
 )
-class AppComponent {
-  var name = 'Angular';
+class AppComponent{
+
 }
